@@ -19,8 +19,8 @@ const io = new Server(server, {
 
 io.on('connection', (socket) => {
 
-    socket.on('join', (data) => {
-        socket.join(JSON.stringify(data));
+    socket.on('join', () => {
+        socket.join();
     })
 
     socket.on('message', (data) => {
