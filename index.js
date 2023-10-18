@@ -21,12 +21,10 @@ io.on('connection', (socket) => {
 
     socket.on('join', (data) => {
         socket.join(JSON.stringify(data));
-        console.log('connected user :', socket.id, 'chat ID : ', data)
     })
 
     socket.on('message', (data) => {
         socket.broadcast.emit('receive', data);
-        console.log(data)
     })
 
     socket.on('disconnect', (socket) => {
