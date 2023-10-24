@@ -32,6 +32,12 @@ io.on('connection', (socket) => {
     })
 })
 
+
+// this route added because of we need '/' route when we have to deploye the server 
+app.get('/',(req,res)=>{
+    res.send('Welcome to chat app')
+})
+
 server.listen(process.env.PORT, () => {
     console.log("Server is running  ")
 })
