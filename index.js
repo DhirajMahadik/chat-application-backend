@@ -13,7 +13,8 @@ const server = http.createServer(app)
 const io = new Server(server, {
     cors: {
         origin: process.env.ORIGIN,
-        methods: ['GET', 'POST']
+        methods: ['GET', 'POST'],
+        credentials: true
     }
 });
 
@@ -22,6 +23,7 @@ io.on('connection' , (socket) => {
 
     socket.on('join', () => {
         socket.join();
+        console.log('joined')
     })
 
     socket.on('message', (data) => {
