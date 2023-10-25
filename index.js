@@ -1,5 +1,5 @@
 import express from 'express'
-import http from 'http'
+import http from 'http2'
 import cors from 'cors'
 import env from 'dotenv'
 import { Server } from 'socket.io'
@@ -14,9 +14,9 @@ const io = new Server(server, {
     cors: {
         origin: process.env.ORIGIN,
         methods: ['GET', 'POST']
-    },
-    transports: ['websocket',  'polling']
+    }
 });
+
 
 io.on('connection' , (socket) => {
 
