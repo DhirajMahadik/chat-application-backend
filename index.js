@@ -14,10 +14,11 @@ const io = new Server(server, {
     cors: {
         origin: process.env.ORIGIN,
         methods: ['GET', 'POST']
-    }
+    },
+    transports: ['websocket',  'polling']
 });
 
-io.on('connection', (socket) => {
+io.on('connection' , (socket) => {
 
     socket.on('join', () => {
         socket.join();
