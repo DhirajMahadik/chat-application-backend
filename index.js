@@ -1,5 +1,5 @@
 import express from 'express'
-import http from 'http2'
+import http from 'http'
 import cors from 'cors'
 import env from 'dotenv'
 import { Server } from 'socket.io'
